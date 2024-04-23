@@ -3,7 +3,7 @@ package Core;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class TreeNode<K, V> {
+public class TreeNode<K extends Comparable<K>, V> {
 
     private Optional<TreeNode<K, V>> left = Optional.empty();
     private Optional<TreeNode<K, V>> right = Optional.empty();
@@ -25,21 +25,27 @@ public class TreeNode<K, V> {
     public boolean isLeaf() { return left.isEmpty() && right.isEmpty(); }
     public boolean ifRed() { return isRed; }
 
-    public void insert(K key, V value) {
+    public void insert(K key, V value, Optional<TreeNode<K, V>> sibling) {
         // TODO: Step 1
         // Insert a new node containing key and value, preserving the ordering.
         //
         if(key.compareTo(this.key) < 0) {
             if(left.isPresent()) {
-                left.get().insert(key, value);
+                left.get().insert(key, value, right);
             }else {
                 left = Optional.of(new TreeNode(key, value));
+                if(isRed) {
+                    check(left, sibling);
+                }
             }
         }else if(key.compareTo(this.key) > 0) {
             if(right.isPresent()) {
-                right.get().insert(key, value);
+                right.get().insert(key, value, left);
             }else {
                 right = Optional.of(new TreeNode(key, value));
+                if(isRed) {
+                    check(right, sibling);
+                }
             }
         }
         // Compare the parameter to this.key to determine which direction to go.
@@ -179,7 +185,6 @@ public class TreeNode<K, V> {
     }
 
     public Optional<TreeNode<K, V>> leftRotateAt(K key) {
-        // TODO:
         if(key.compareTo(this.key) < 0) {
             if(left.isPresent()) {left = left.get().leftRotateAt(key);}
 
@@ -230,6 +235,10 @@ public class TreeNode<K, V> {
         //      and return the value to be held by the parent.
         // - If value is not present, just return Optional.empty().
         return Optional.of(this);
+    }
+
+    public void check(Optional<TreeNode<K, V>> child, Optional<TreeNode<K, V>> pibling) {
+
     }
 }
 
