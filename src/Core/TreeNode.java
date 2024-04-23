@@ -10,10 +10,12 @@ public class TreeNode<K extends Comparable<K>, V> {
     private K key;
     private V value;
     private boolean isRed = true;
+    private Direction direction;
 
     public TreeNode(K key, V value) {
         this.key = key;
         this.value = value;
+        direction = Direction.ROOT;
     }
 
     public K get() {
@@ -25,26 +27,34 @@ public class TreeNode<K extends Comparable<K>, V> {
     public boolean isLeaf() { return left.isEmpty() && right.isEmpty(); }
     public boolean ifRed() { return isRed; }
 
-    public void insert(K key, V value, Optional<TreeNode<K, V>> sibling) {
+    public boolean insert(K key, V value, Optional<TreeNode<K, V>> sibling) {
         // TODO: Step 1
         // Insert a new node containing key and value, preserving the ordering.
         //
         if(key.compareTo(this.key) < 0) {
             if(left.isPresent()) {
-                left.get().insert(key, value, right);
+                if(left.get().insert(key, value, right) && direction != Direction.ROOT) {
+                    isRed = true;
+                }
             }else {
                 left = Optional.of(new TreeNode(key, value));
+                left.get().direction = Direction.LEFT;
+                left.get().parent = Optional.of(this);
                 if(isRed) {
-                    check(left, sibling);
+                    return check(left, sibling);
                 }
             }
         }else if(key.compareTo(this.key) > 0) {
             if(right.isPresent()) {
-                right.get().insert(key, value, left);
+                if(right.get().insert(key, value, left) && direction != Direction.ROOT) {
+                    isRed = true;
+                }
             }else {
                 right = Optional.of(new TreeNode(key, value));
+                right.get().direction = Direction.RIGHT;
+                right.get().parent = Optional.of(this);
                 if(isRed) {
-                    check(right, sibling);
+                    return check(right, sibling);
                 }
             }
         }
@@ -194,8 +204,11 @@ public class TreeNode<K extends Comparable<K>, V> {
         }else if(key.compareTo(this.key) == 0) {
             if(right.isPresent()) {
                 TreeNode<K, V> temp = right.get();
+                temp.direction = this.direction;
                 right = right.get().left;
+                right.get().direction = Direction.RIGHT;
                 temp.left = Optional.of(this);
+                this.direction = Direction.LEFT;
                 return Optional.of(temp);
             }
         }
@@ -221,8 +234,11 @@ public class TreeNode<K extends Comparable<K>, V> {
         }else if(value.compareTo(this.key) == 0) {
             if(left.isPresent()) {
                 TreeNode<K, V> temp = left.get();
+                temp.direction = this.direction;
                 left = left.get().right;
+                left.get().direction = Direction.LEFT;
                 temp.right = Optional.of(this);
+                this.direction = Direction.RIGHT;
                 return Optional.of(temp);
             }
         }
@@ -237,8 +253,33 @@ public class TreeNode<K extends Comparable<K>, V> {
         return Optional.of(this);
     }
 
-    public void check(Optional<TreeNode<K, V>> child, Optional<TreeNode<K, V>> pibling) {
+    public boolean isLeft() {return direction == Direction.LEFT;}
 
+    public boolean isRight() {return direction == Direction.RIGHT;}
+
+    public boolean check(Optional<TreeNode<K, V>> child, Optional<TreeNode<K, V>> pibling) {
+        if(pibling.isPresent()) {
+            if (isRed && pibling.get().ifRed()) {
+                case2(pibling);
+            }else if(isRed && !pibling.get().ifRed()) {
+                case3(child, pibling);
+            }
+        }
+    }
+
+    public void case2(Optional<TreeNode<K, V>> pibling) {
+        isRed = false;
+        pibling.get().isRed = false;
+    }
+
+    public void case3(Optional<TreeNode<K, V>> child, Optional<TreeNode<K, V>> pibling) {
+        if(child.get().isLeft() && this.isRight()) {
+            child.get().isRed = false;
+            rightRotateAt(this.key);
+            //figure out parents.
+        }else if(child.get().isRight() && this.isLeft()) {
+
+        }
     }
 }
 
