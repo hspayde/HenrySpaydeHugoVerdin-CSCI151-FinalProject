@@ -12,17 +12,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <Label alignment="CENTER" text="Book Title" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Zapfino" size="25.0" />
-         </font>
-      </Label>
-   </top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CreateBookController">
    <center>
       <VBox alignment="CENTER" prefHeight="417.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Book Title :">
+                     <font>
+                        <Font name="Optima Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label text="Author :">
@@ -164,6 +174,9 @@
                         <Font name="Optima Regular" size="13.0" />
                      </font></TextField>
                </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -172,11 +185,17 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <Slider blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                  <Slider blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin></Slider>
                   <TextField prefHeight="26.0" prefWidth="37.0">
                      <font>
                         <Font name="Optima Regular" size="13.0" />
-                     </font></TextField>
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin></TextField>
                </children>
                <padding>
                   <Insets bottom="10.0" top="10.0" />
@@ -201,7 +220,7 @@
                   <Insets bottom="10.0" />
                </padding>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Update">
+            <Button alignment="CENTER" mnemonicParsing="false" text="Create">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
