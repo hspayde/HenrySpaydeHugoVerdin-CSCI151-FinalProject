@@ -29,7 +29,7 @@ public class TreeNode<K extends Comparable<K>, V> {
     public boolean ifRed() { return isRed; }
 
     public boolean insert(K key, V value, Optional<TreeNode<K, V>> sibling) {
-        // Inserts a new node containing key and value, preserving the ordering.
+        // Inserts a new node containing key and value, preserving the ordering
         if(key.compareTo(this.key) < 0) {
             if(left.isPresent()) {
                 if(left.get().insert(key, value, right) && direction != Direction.ROOT) {
