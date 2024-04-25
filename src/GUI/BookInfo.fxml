@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <Label alignment="CENTER" text="Book Title" BorderPane.alignment="CENTER">
          <font>
@@ -17,72 +21,188 @@
       </Label>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="417.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label text="Author :">
                      <font>
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField>
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font></TextField>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label text="Page Count :">
                      <font>
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField>
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font></TextField>
                </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label text="Current Page :">
                      <font>
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField>
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font></TextField>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Reading :" />
-                  <CheckBox mnemonicParsing="false" text="Yes" />
-                  <CheckBox mnemonicParsing="false" text="No" />
+                  <Label text="Reading :">
+                     <font>
+                        <Font name="Optima Regular" size="15.0" />
+                     </font></Label>
+                  <CheckBox mnemonicParsing="false" text="Yes">
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></CheckBox>
+                  <CheckBox mnemonicParsing="false" text="No">
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></CheckBox>
                </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
             </HBox>
-            <VBox prefHeight="109.0" prefWidth="600.0">
+            <VBox alignment="CENTER" prefHeight="109.0" prefWidth="600.0">
                <children>
-                  <Label text="Shelves :" />
-                  <HBox prefHeight="44.0" prefWidth="600.0">
+                  <Label text="Shelves :">
+                     <font>
+                        <Font name="Optima Regular" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding></Label>
+                  <HBox alignment="CENTER" prefHeight="44.0" prefWidth="600.0">
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Owned" />
-                              <CheckBox mnemonicParsing="false" text="Read List" />
+                              <CheckBox mnemonicParsing="false" text="Owned">
+                                 <font>
+                                    <Font name="Optima Regular" size="15.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding></CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Read List">
+                                 <font>
+                                    <Font name="Optima Regular" size="15.0" />
+                                 </font></CheckBox>
                            </children>
                         </VBox>
                         <VBox prefHeight="47.0" prefWidth="100.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Read" />
-                              <CheckBox mnemonicParsing="false" text="Wish List" />
+                              <CheckBox mnemonicParsing="false" text="Read">
+                                 <font>
+                                    <Font name="Optima Regular" size="15.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding></CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Wish List">
+                                 <font>
+                                    <Font name="Optima Regular" size="15.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding></CheckBox>
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Genre :" />
-                  <TextField />
+                  <Label text="Genre :">
+                     <font>
+                        <Font name="Optima Regular" size="15.0" />
+                     </font></Label>
+                  <TextField>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font></TextField>
                </children>
             </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Rating :">
+                     <font>
+                        <Font name="Optima Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Slider blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                  <TextField prefHeight="26.0" prefWidth="37.0">
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font></TextField>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Label text="Comments :">
+                     <font>
+                        <Font name="Optima Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea prefHeight="200.0" prefWidth="200.0">
+                     <font>
+                        <Font name="Optima Regular" size="13.0" />
+                     </font></TextArea>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+            <Button alignment="CENTER" mnemonicParsing="false" text="Edit">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
          </children></VBox>
    </center>
 </BorderPane>
