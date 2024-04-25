@@ -62,37 +62,37 @@ public class Book {
     }
 
 
-    public String returnAuthor(String author){
+    public String returnAuthor(){
         return this.author;
     }
-    public String returnBookTitle(String book_title){
+    public String returnBookTitle(){
         return this.book_title;
     }
-    public int returnPageCount(int page_count){
+    public int returnPageCount(){
         return this.page_count;
     }
-    public int returnCurrentPage(int current_page){
+    public int returnCurrentPage(){
         return this.current_page;
     }
-    public boolean returnIsReading(boolean is_reading){
+    public boolean returnIsReading(){
         return this.is_reading;
     }
-    public boolean returnOwned(boolean owned){
+    public boolean returnOwned(){
         return this.owned;
     }
-    public boolean returnRead(boolean read){
+    public boolean returnRead(){
         return this.read;
     }
-    public boolean returnReadList(boolean read_list){
+    public boolean returnReadList(){
         return this.read_list;
     }
-    public boolean returnWishList(boolean wish_list){
+    public boolean returnWishList(){
         return this.wish_list;
     }
-    public double returnRating(double rating){
+    public double returnRating(){
         return this.rating;
     }
-    public String returnComments(String comments){
+    public String returnComments(){
         return this.comments;
     }
 }
