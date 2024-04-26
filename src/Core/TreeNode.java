@@ -105,6 +105,7 @@ public class TreeNode<K extends Comparable<K>, V> {
                 return null;
             }
         }
+        return null;
     }
 
     public int size() {
