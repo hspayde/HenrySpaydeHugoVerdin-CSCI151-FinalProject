@@ -8,6 +8,7 @@ public class TreeNode<K extends Comparable<K>, V> {
     private Optional<TreeNode<K, V>> left = Optional.empty();
     private Optional<TreeNode<K, V>> right = Optional.empty();
     private Optional<TreeNode<K, V>> parent = Optional.empty();
+    private Optional<TreeNode<K, V>> fakeSibling = Optional.empty();
     private K key;
     private V value;
     private boolean isRed = true;
@@ -86,6 +87,24 @@ public class TreeNode<K extends Comparable<K>, V> {
         // Otherwise, call contains recursively on the child.
 
         return false;
+    }
+
+    public V retrieve(K key) {
+        if(key.compareTo(this.key) == 0) {
+            return this.value;
+        }else if(key.compareTo(this.key) < 0) {
+            if(left.isPresent()) {
+                return left.get().retrieve(key);
+            }else {
+                return null;
+            }
+        }else if(key.compareTo(this.key) > 0) {
+            if(right.isPresent()) {
+                return right.get().retrieve(key);
+            }else {
+                return null;
+            }
+        }
     }
 
     public int size() {
