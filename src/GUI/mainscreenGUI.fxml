@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
    <top>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -41,7 +41,7 @@
                         <Font name="Optima Regular" size="25.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="39.0" prefWidth="151.0">
+                  <TextField fx:id="currentShelfText" prefHeight="39.0" prefWidth="151.0">
                      <font>
                         <Font size="20.0" />
                      </font></TextField>
@@ -53,7 +53,7 @@
                         <Font name="Optima Regular" size="25.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="39.0" prefWidth="232.0">
+                  <TextField fx:id="currentBookText" prefHeight="39.0" prefWidth="232.0">
                      <font>
                         <Font size="20.0" />
                      </font></TextField>
@@ -132,11 +132,11 @@
             <VBox alignment="CENTER" prefHeight="305.0" prefWidth="800.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a5930" height="20.0" stroke="BLACK" strokeType="INSIDE" width="760.0" />
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="760.0" />
+                  <Pane fx:id="pane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="760.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a5930" height="20.0" stroke="BLACK" strokeType="INSIDE" width="760.0" />
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="760.0" />
+                  <Pane fx:id="pane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="760.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a5930" height="20.0" stroke="BLACK" strokeType="INSIDE" width="760.0" />
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="760.0" />
+                  <Pane fx:id="pane3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="760.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a5930" height="20.0" stroke="BLACK" strokeType="INSIDE" width="760.0" />
                </children>
                <padding>
