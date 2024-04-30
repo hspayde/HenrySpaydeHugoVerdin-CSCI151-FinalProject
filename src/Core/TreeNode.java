@@ -317,6 +317,8 @@ public class TreeNode<K extends Comparable<K>, V> {
             leftRotateAt(parent.get().key);
         }
     }
+
+    //Add height method for testing
 }
 
 //Adapted from 151bst Lab
