@@ -7,6 +7,7 @@ import static Model.Book.bookToString;
 
 public class WriteToFile {
     public static void main(String[] args) {
+        /*This array needs to be built from the books in the tree map*/
         Book [] books = new Book [4];
         books[0] = new Book ("hugo","verdin",10,5,true,false,true,false,false,2.25,"good");
         books[1] = new Book ("hugo","verdin",10,5,true,false,true,false,false,2.25,"good");
