@@ -188,12 +188,12 @@ public class TreeNode<K extends Comparable<K>, V> {
         op.accept(this.key);
     }
 
-    public void inOrder(Consumer<K> op) {
+    public void inOrder(Consumer<V> op) {
         // Perform an inorder traversal using op.accept(value)
         if(left.isPresent()) {
             left.get().inOrder(op);
         }
-        op.accept(this.key);
+        op.accept(this.value);
         if(right.isPresent()) {
             right.get().inOrder(op);
         }
