@@ -1,20 +1,17 @@
 package Model;
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner;
 
 public class Book {
-    private String author = "";
-    private String book_title = "";
-    private int page_count = 0;
-    private int current_page = 0;
-    private boolean is_reading = false;
-    private boolean owned = false;
-    private boolean read = false;
-    private boolean read_list = false;
-    private boolean wish_list = false;
-    private double rating = 0;
-    private String comments = "";
+    private String author;
+    private String book_title;
+    private int page_count;
+    private int current_page;
+    private boolean is_reading;
+    private boolean owned;
+    private boolean read;
+    private boolean read_list;
+    private boolean wish_list;
+    private double rating;
+    private String comments;
 
     public Book(String author, String book_title, int page_count, int current_page, boolean is_reading, boolean owned, boolean read, boolean read_list, boolean wish_list, double rating, String comments) {
         this.author = author;
@@ -119,26 +116,15 @@ public class Book {
         return this.comments;
     }
 
-    public String bookToString() {
+    public static String bookToString(Book book) {
         String bookInfo = "";
-        bookInfo += this.author + "," + this.book_title + "," + Integer.toString(this.page_count) + "," + Integer.toString(this.current_page) + "," + Boolean.toString(this.is_reading) + "," + Boolean.toString(this.read) + "," + Boolean.toString(this.read_list) + "," + Boolean.toString(this.wish_list) + "," + Double.toString(this.rating) + "," + this.comments + ";";
+        bookInfo += book.author + "," + book.book_title + "," + Integer.toString(book.page_count) + "," + Integer.toString(book.current_page) + "," + Boolean.toString(book.is_reading)  +"," + Boolean.toString(book.owned) + "," + Boolean.toString(book.read) + "," + Boolean.toString(book.read_list) + "," + Boolean.toString(book.wish_list) + "," + Double.toString(book.rating) + "," + book.comments;
         return bookInfo;
     }
 
-    public Book stringToBook() {
-        Book b = new Book("","",);
-        try {
-            File myObj = new File("Files/BooksRead.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.findInLine(",");
-                System.out.println(data);
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+    public static Book stringToBook(String book) {
+        String [] bookinfo = book.split(",");
+        Book b = new Book(bookinfo[0],bookinfo[1],Integer.valueOf(bookinfo[2]),Integer.valueOf(bookinfo[3]),Boolean.parseBoolean(bookinfo[4]),Boolean.parseBoolean(bookinfo[5]),Boolean.parseBoolean(bookinfo[6]),Boolean.parseBoolean(bookinfo[7]), Boolean.parseBoolean(bookinfo[8]), Double.parseDouble(bookinfo[9]),bookinfo[10]);
         return b;
     }
 }

@@ -1,1 +1,0 @@
-hugo,verdin,10,5,true,false,true,false,2.25,good;
