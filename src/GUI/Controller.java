@@ -20,66 +20,75 @@ public class Controller {
     @FXML
     private TextField currentShelfText;
     @FXML
-    private TextField bookTitleText;
-    @FXML
-    private TextField authorText;
-    @FXML
-    private TextField pageCountText;
-    @FXML
-    private TextField currentPageText;
-    @FXML
-    private CheckBox readingY;
-    @FXML
-    private CheckBox readingN;
-    @FXML
-    private CheckBox ownedBox;
-    @FXML
-    private CheckBox readBox;
-    @FXML
-    private CheckBox readListBox;
-    @FXML
-    private CheckBox wishListBox;
-    @FXML
-    private TextField genreText;
-    @FXML
-    private TextField ratingText;
-    @FXML
-    private TextArea commentsText;
-    @FXML
     private Pane pane1;
-
     @FXML
     private Pane pane2;
     @FXML
     private Pane pane3;
 
-    private Shelf owned;
-    private Shelf read;
-    private Shelf readList;
-    private Shelf wishList;
-    private Shelf currentShelf;
+    Book test = new Book("Author", "Title", 55, 25, true, true, true, true, true, 4, "comments");
+    Book test1 = new Book("Autho", "Tite", 5, 2, true, true, true, true, true, 4, "comments");
+    Book test2 = new Book("Auor", "tle", 85, 5, true, true, true, true, true, 4, "comments");
+
+
+
+    private Shelf owned = new Shelf(test);
+    private Shelf read = new Shelf(test);
+    private Shelf readList = new Shelf(test);
+    private Shelf wishList = new Shelf(test);
+    private Shelf currentShelf = owned;
     private Color[] colors = { Color.CADETBLUE, Color.DARKOLIVEGREEN, Color.DARKSEAGREEN, Color.GOLDENROD, Color.MEDIUMSEAGREEN, Color.MISTYROSE, Color.ROSYBROWN };
 
 
     public void initialize() {
+        currentShelfText.setText("Owned");
+        owned.add(test);
+        read.add(test1);
+        wishList.add(test2);
         try {
-            updateView(getList(currentShelf));
+            updateView();
         }catch (Exception ignored) {}
     }
 
-    public void updateView(ArrayList<Book> displayed) {
+    public void ownedButton() {
+        currentShelf = owned;
+        currentShelfText.setText("Owned");
+        updateView();
+    }
+
+    public void readButton() {
+        currentShelf = read;
+        currentShelfText.setText("Read");
+        updateView();
+    }
+
+    public void readListButton() {
+        currentShelf = readList;
+        currentShelfText.setText("Reading List");
+        updateView();
+    }
+
+    public void wishListButton() {
+        currentShelf = wishList;
+        currentShelfText.setText("Wish List");
+        updateView();
+    }
+
+    public void updateView() {
+        ArrayList<Book> displayed = getList(currentShelf);
         pane1.getChildren().clear();
         pane2.getChildren().clear();
         pane3.getChildren().clear();
         Random rand = new Random();
         Book current;
 
-        double bookWidth = pane1.getWidth() /50;
-        double bookHeight = 50;
+        double bookWidth = pane1.getPrefWidth() /50;
+
 
         for(int i = 0; i < displayed.size(); i++) {
+            double bookHeight = rand.nextDouble(50, 75);
             if(i < 50) {
-                Rectangle book = new Rectangle(i * bookWidth, pane1.getHeight(), bookWidth, rand.nextDouble(50, 75));
+                Rectangle book = new Rectangle(i * bookWidth, pane1.getPrefHeight() - bookHeight, bookWidth, bookHeight);
                 book.setFill(colors[rand.nextInt(0, colors.length - 1)]);
                 book.setStroke(Color.BLACK);
                 current = displayed.get(i);
@@ -89,7 +98,7 @@ public class Controller {
                 });
                 pane1.getChildren().add(book);
             }else if(i < 100) {
-                Rectangle book = new Rectangle(i * bookWidth, pane1.getHeight(), bookWidth, rand.nextDouble(50, 75));
+                Rectangle book = new Rectangle(i * bookWidth, pane2.getPrefHeight() - bookHeight, bookWidth, bookHeight);
                 book.setFill(colors[rand.nextInt(0, colors.length - 1)]);
                 book.setStroke(Color.BLACK);
                 current = displayed.get(i);
@@ -99,7 +108,7 @@ public class Controller {
                 });
                 pane2.getChildren().add(book);
             }else if(i < 150) {
-                Rectangle book = new Rectangle(i * bookWidth, pane1.getHeight(), bookWidth, rand.nextDouble(50, 75));
+                Rectangle book = new Rectangle(i * bookWidth, pane3.getPrefHeight() - bookHeight, bookWidth, bookHeight);
                 book.setFill(colors[rand.nextInt(0, colors.length - 1)]);
                 book.setStroke(Color.BLACK);
                 current = displayed.get(i);
