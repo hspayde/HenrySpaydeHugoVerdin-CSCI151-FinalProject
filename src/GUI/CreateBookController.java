@@ -34,8 +34,6 @@ public class CreateBookController {
     @FXML
     private TextField genre;
     @FXML
-    private TextField rating;
-    @FXML
     private Slider slideRating;
     @FXML
     private TextArea comments;
@@ -43,10 +41,7 @@ public class CreateBookController {
 
     public void initialize() {}
     public void createBook(){
-        Book newbook = new Book(this.author.getText(), this.bookTitle.getText(), this.pageCount.getText(), this.currentPage.getText(), this.readingY.isSelected(),this.owned.isSelected(),this.read.isSelected(), this.readList.isSelected(), this.wishList.isSelected(), this.genre.getText(), Integer.parseInt(this.rating.getText()), this.comments.getText());
+        Book newbook = new Book(this.author.getText(), this.bookTitle.getText(), this.pageCount.getText(), this.currentPage.getText(), this.readingY.isSelected(),this.owned.isSelected(),this.read.isSelected(), this.readList.isSelected(), this.wishList.isSelected(), this.genre.getText(), this.slideRating.getValue(), this.comments.getText());
         System.out.println(bookToString(newbook));
-    }
-    public void setRating(){
-        this.rating.setText(Double.toString(slideRating.getValue()));
     }
 }
