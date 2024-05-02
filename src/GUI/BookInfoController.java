@@ -2,14 +2,11 @@ package GUI;
 
 import Model.Book;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class BookInfoController {
     @FXML
-    private TextField bookTitle;
+    private Label bookTitle;
     @FXML
     private TextField author;
     @FXML
