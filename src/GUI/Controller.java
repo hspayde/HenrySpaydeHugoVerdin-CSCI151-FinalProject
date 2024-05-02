@@ -3,8 +3,6 @@ package GUI;
 import Model.Book;
 import Model.Shelf;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -32,10 +30,10 @@ public class Controller {
 
 
 
-    private Shelf owned = new Shelf(test);
-    private Shelf read = new Shelf(test);
-    private Shelf readList = new Shelf(test);
-    private Shelf wishList = new Shelf(test);
+    private Shelf owned = new Shelf();
+    private Shelf read = new Shelf();
+    private Shelf readList = new Shelf();
+    private Shelf wishList = new Shelf();
     private Shelf currentShelf = owned;
     private Color[] colors = { Color.CADETBLUE, Color.DARKOLIVEGREEN, Color.DARKSEAGREEN, Color.GOLDENROD, Color.MEDIUMSEAGREEN, Color.MISTYROSE, Color.ROSYBROWN };
 
@@ -93,8 +91,11 @@ public class Controller {
                 book.setStroke(Color.BLACK);
                 current = displayed.get(i);
                 Book finalCurrent = current;
-                book.setOnMouseDragOver(event -> {
-                    dragOver(finalCurrent);
+                book.setOnMouseEntered(event -> {
+                    mouseEntered(finalCurrent);
+                });
+                book.setOnMouseClicked(event -> {
+                    mouseClicked(finalCurrent);
                 });
                 pane1.getChildren().add(book);
             }else if(i < 100) {
@@ -103,8 +104,11 @@ public class Controller {
                 book.setStroke(Color.BLACK);
                 current = displayed.get(i);
                 Book finalCurrent = current;
-                book.setOnMouseDragOver(event -> {
-                    dragOver(finalCurrent);
+                book.setOnMouseEntered(event -> {
+                    mouseEntered(finalCurrent);
+                });
+                book.setOnMouseClicked(event -> {
+                    mouseClicked(finalCurrent);
                 });
                 pane2.getChildren().add(book);
             }else if(i < 150) {
@@ -113,16 +117,27 @@ public class Controller {
                 book.setStroke(Color.BLACK);
                 current = displayed.get(i);
                 Book finalCurrent = current;
-                book.setOnMouseDragOver(event -> {
-                    dragOver(finalCurrent);
+                book.setOnMouseEntered(event -> {
+                    mouseEntered(finalCurrent);
+                });
+                book.setOnMouseClicked(event -> {
+                    mouseClicked(finalCurrent);
                 });
                 pane3.getChildren().add(book);
             }
         }
     }
 
-    public void dragOver(Book book) {
+    public void mouseEntered(Book book) {
         currentBookText.setText(book.returnBookTitle());
+    }
+
+    public void mouseClicked(Book book) {
+
+    }
+
+    public void addBook() {
+
     }
 
     public ArrayList<Book> getList(Shelf current) {

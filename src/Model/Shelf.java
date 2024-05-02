@@ -10,12 +10,16 @@ import java.util.function.Consumer;
 public class Shelf {
     private TreeNode<String, Book> treeMap;
 
-    public Shelf(Book book) {
-        treeMap = new TreeNode(book.returnBookTitle(), book);
+    public Shelf() {
     }
 
     public void add(Book book) {
-        treeMap.insert(book.returnBookTitle(), book, Optional.empty());
+        if(treeMap == null) {
+            treeMap = new TreeNode(book.returnBookTitle(), book);
+        }else {
+            treeMap.insert(book.returnBookTitle(), book, Optional.empty());
+            System.out.println(treeMap.size());
+        }
     }
 
     public Book retrieve(Book book) {
