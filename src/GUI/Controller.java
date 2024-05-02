@@ -3,7 +3,6 @@ package GUI;
 import Core.BookHolder;
 import Model.Book;
 import Model.Shelf;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -155,7 +154,7 @@ public class Controller {
         }
     }
 
-    public void addBook() {
+    public void addBookController() {
         Stage stage = new Stage();
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -174,6 +173,13 @@ public class Controller {
         return current.inorder();
     }
 
+    public void update() {
+        BookHolder bookHolder = BookHolder.getInstance();
+        Book book = bookHolder.getBook();
+    }
 
+    public void addBook (Book book) {
+
+    }
 
 }

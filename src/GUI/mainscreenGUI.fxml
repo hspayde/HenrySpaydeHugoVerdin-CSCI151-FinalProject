@@ -57,9 +57,9 @@
                      <font>
                         <Font size="20.0" />
                      </font></TextField>
-                  <Button mnemonicParsing="false" onAction="#addBook" text="Add Book">
+                  <Button mnemonicParsing="false" onAction="#addBookController" text="Add Book">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <font>
                         <Font name="Optima Regular" size="25.0" />
@@ -70,6 +70,17 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Update">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
