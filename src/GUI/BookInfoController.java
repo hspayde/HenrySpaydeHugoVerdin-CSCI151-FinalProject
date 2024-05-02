@@ -4,6 +4,7 @@ import Model.Book;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class BookInfoController {
@@ -34,7 +35,7 @@ public class BookInfoController {
     @FXML
     private Slider sliderating;
     @FXML
-    private TextField comments;
+    private TextArea comments;
     private Book book;
     public void intialize() {
         bookTitle.setText(book.returnBookTitle());
