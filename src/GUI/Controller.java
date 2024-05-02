@@ -176,10 +176,22 @@ public class Controller {
     public void update() {
         BookHolder bookHolder = BookHolder.getInstance();
         Book book = bookHolder.getBook();
+        addBook(book);
     }
 
     public void addBook (Book book) {
-
+        if(book.returnOwned() && !owned.contains(book)) {
+            owned.add(book);
+        }
+        if(book.returnRead() && !read.contains(book)) {
+            read.add(book);
+        }
+        if(book.returnReadList() && !readList.contains(book)) {
+            readList.add(book);
+        }
+        if(book.returnWishList() && !wishList.contains(book)) {
+            wishList.add(book);
+        }
     }
 
 }

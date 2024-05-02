@@ -38,4 +38,8 @@ public class Shelf {
         traversal.accept(treeMap, v -> result.add(v));
         return result;
     }
+
+    public boolean contains(Book book) {
+        return treeMap.contains(book.returnBookTitle());
+    }
 }
