@@ -1,5 +1,6 @@
 package GUI;
 
+import Core.BookHolder;
 import Model.Book;
 import Model.Shelf;
 import javafx.event.Event;
@@ -139,6 +140,8 @@ public class Controller {
 
     public void mouseClicked(Book book) {
         Stage stage = new Stage();
+        BookHolder bookHolder = BookHolder.getInstance();
+        bookHolder.setBook(book);
         try {
             FXMLLoader loader = new FXMLLoader();
             BorderPane root =

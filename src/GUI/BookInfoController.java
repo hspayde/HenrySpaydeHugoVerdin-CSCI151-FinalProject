@@ -1,5 +1,6 @@
 package GUI;
 
+import Core.BookHolder;
 import Model.Book;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -34,7 +35,9 @@ public class BookInfoController {
     @FXML
     private TextArea comments;
     private Book book;
-    public void intialize() {
+    public void initialize() {
+        BookHolder bookHolder = BookHolder.getInstance();
+        book = bookHolder.getBook();
         bookTitle.setText(book.returnBookTitle());
         author.setText(book.returnAuthor());
         pageCount.setText(book.returnPageCount());
