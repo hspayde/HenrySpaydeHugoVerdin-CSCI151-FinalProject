@@ -39,7 +39,6 @@ public class BookInfoController {
     public void intialize() {
         bookTitle.setText(book.returnBookTitle());
         author.setText(book.returnAuthor());
-        pa
     }
     public void updateBook(){
         book.setAuthor(author.getText());

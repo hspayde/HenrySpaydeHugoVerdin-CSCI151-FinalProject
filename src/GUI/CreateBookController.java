@@ -40,7 +40,7 @@ public class CreateBookController {
     @FXML
     private Slider sliderating;
     @FXML
-    private TextField comments;
+    private TextArea comments;
 
 
     public void initialize() {}
