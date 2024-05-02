@@ -23,7 +23,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="bookTitle">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -40,7 +40,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="author">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -56,7 +56,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="pageCount">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -75,7 +75,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="currentPage">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -90,14 +90,14 @@
                      <font>
                         <Font name="Optima Regular" size="15.0" />
                      </font></Label>
-                  <CheckBox mnemonicParsing="false" text="Yes">
+                  <CheckBox fx:id="readingY" mnemonicParsing="false" text="Yes">
                      <font>
                         <Font name="Optima Regular" size="13.0" />
                      </font>
                      <padding>
                         <Insets left="10.0" />
                      </padding></CheckBox>
-                  <CheckBox mnemonicParsing="false" text="No">
+                  <CheckBox fx:id="readingN" mnemonicParsing="false" text="No">
                      <font>
                         <Font name="Optima Regular" size="13.0" />
                      </font>
@@ -122,14 +122,14 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Owned">
+                              <CheckBox fx:id="owned" mnemonicParsing="false" text="Owned">
                                  <font>
                                     <Font name="Optima Regular" size="15.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
                                  </padding></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Read List">
+                              <CheckBox fx:id="readList" mnemonicParsing="false" text="Read List">
                                  <font>
                                     <Font name="Optima Regular" size="15.0" />
                                  </font></CheckBox>
@@ -137,14 +137,14 @@
                         </VBox>
                         <VBox prefHeight="47.0" prefWidth="100.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Read">
+                              <CheckBox fx:id="read" mnemonicParsing="false" text="Read">
                                  <font>
                                     <Font name="Optima Regular" size="15.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
                                  </padding></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Wish List">
+                              <CheckBox fx:id="wishList" mnemonicParsing="false" text="Wish List">
                                  <font>
                                     <Font name="Optima Regular" size="15.0" />
                                  </font>
@@ -163,7 +163,7 @@
                      <font>
                         <Font name="Optima Regular" size="15.0" />
                      </font></Label>
-                  <TextField>
+                  <TextField fx:id="genre">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -185,11 +185,11 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <Slider blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+                  <Slider fx:id="sliderating" blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" onDragDone="#setRating" showTickLabels="true" showTickMarks="true" snapToTicks="true">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin></Slider>
-                  <TextField prefHeight="26.0" prefWidth="37.0">
+                  <TextField fx:id="rating" prefHeight="26.0" prefWidth="37.0">
                      <font>
                         <Font name="Optima Regular" size="13.0" />
                      </font>
@@ -208,7 +208,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="200.0" prefWidth="200.0">
+                  <TextArea fx:id="comments" prefHeight="200.0" prefWidth="200.0">
                      <font>
                         <Font name="Optima Regular" size="13.0" />
                      </font>
@@ -220,7 +220,7 @@
                   <Insets bottom="10.0" />
                </padding>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Create">
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#createbook" text="Create">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>

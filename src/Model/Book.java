@@ -10,10 +10,11 @@ public class Book {
     private boolean read;
     private boolean read_list;
     private boolean wish_list;
+    private String genre;
     private double rating;
     private String comments;
 
-    public Book(String author, String book_title, int page_count, int current_page, boolean is_reading, boolean owned, boolean read, boolean read_list, boolean wish_list, double rating, String comments) {
+    public Book(String author, String book_title, int page_count, int current_page, boolean is_reading, boolean owned, boolean read, boolean read_list, boolean wish_list, String genre, double rating, String comments) {
         this.author = author;
         this.book_title = book_title;
         this.page_count = page_count;
@@ -23,6 +24,7 @@ public class Book {
         this.read = read;
         this.read_list = read_list;
         this.wish_list = wish_list;
+        this.genre = genre;
         this.rating = rating;
         this.comments = comments;
     }
@@ -59,8 +61,9 @@ public class Book {
         this.read_list = read_list;
     }
 
-    public void setWishList(boolean wish_list) {
-        this.wish_list = wish_list;
+    public void setWishList(boolean wish_list) {this.wish_list = wish_list;}
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public void setRating(double rating) {
@@ -107,6 +110,7 @@ public class Book {
     public boolean returnWishList() {
         return this.wish_list;
     }
+    public String returnGenre(){return this.genre}
 
     public double returnRating() {
         return this.rating;
@@ -118,13 +122,13 @@ public class Book {
 
     public static String bookToString(Book book) {
         String bookInfo = "";
-        bookInfo += book.author + "," + book.book_title + "," + Integer.toString(book.page_count) + "," + Integer.toString(book.current_page) + "," + Boolean.toString(book.is_reading)  +"," + Boolean.toString(book.owned) + "," + Boolean.toString(book.read) + "," + Boolean.toString(book.read_list) + "," + Boolean.toString(book.wish_list) + "," + Double.toString(book.rating) + "," + book.comments;
+        bookInfo += book.author + "," + book.book_title + "," + Integer.toString(book.page_count) + "," + Integer.toString(book.current_page) + "," + Boolean.toString(book.is_reading)  +"," + Boolean.toString(book.owned) + "," + Boolean.toString(book.read) + "," + Boolean.toString(book.read_list) + "," + Boolean.toString(book.wish_list) + "," + book.genre + "," + Double.toString(book.rating) + "," + book.comments;
         return bookInfo;
     }
 
     public static Book stringToBook(String book) {
         String [] bookinfo = book.split(",");
-        Book b = new Book(bookinfo[0],bookinfo[1],Integer.valueOf(bookinfo[2]),Integer.valueOf(bookinfo[3]),Boolean.parseBoolean(bookinfo[4]),Boolean.parseBoolean(bookinfo[5]),Boolean.parseBoolean(bookinfo[6]),Boolean.parseBoolean(bookinfo[7]), Boolean.parseBoolean(bookinfo[8]), Double.parseDouble(bookinfo[9]),bookinfo[10]);
+        Book b = new Book(bookinfo[0],bookinfo[1],Integer.valueOf(bookinfo[2]),Integer.valueOf(bookinfo[3]),Boolean.parseBoolean(bookinfo[4]),Boolean.parseBoolean(bookinfo[5]),Boolean.parseBoolean(bookinfo[6]),Boolean.parseBoolean(bookinfo[7]), Boolean.parseBoolean(bookinfo[8]), bookinfo[9], Double.parseDouble(bookinfo[10]),bookinfo[11]);
         return b;
     }
 }
