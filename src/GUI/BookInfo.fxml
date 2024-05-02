@@ -172,7 +172,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <Slider fx:id="sliderating" blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" onDragDone="#setRating" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                  <Slider fx:id="sliderating" blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
                </children>
                <padding>
                   <Insets bottom="10.0" top="10.0" />
