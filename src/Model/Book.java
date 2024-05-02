@@ -110,7 +110,7 @@ public class Book {
     public boolean returnWishList() {
         return this.wish_list;
     }
-    public String returnGenre(){return this.genre}
+    public String returnGenre(){return this.genre; }
 
     public double returnRating() {
         return this.rating;
