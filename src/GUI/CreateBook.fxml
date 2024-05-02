@@ -185,7 +185,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <Slider fx:id="sliderating" blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" onDragDone="#setRating" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+                  <Slider fx:id="slideRating" blockIncrement="0.25" majorTickUnit="2.5" max="10.0" minorTickCount="10" onDragDone="#setRating" showTickLabels="true" showTickMarks="true" snapToTicks="true">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin></Slider>
@@ -220,7 +220,7 @@
                   <Insets bottom="10.0" />
                </padding>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#createbook" text="Create">
+            <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#createBook" text="Create">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>

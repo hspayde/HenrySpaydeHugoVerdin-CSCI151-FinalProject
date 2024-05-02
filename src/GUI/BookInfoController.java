@@ -40,7 +40,17 @@ public class BookInfoController {
     public void intialize() {
         bookTitle.setText(book.returnBookTitle());
         author.setText(book.returnAuthor());
-        pa
+        pageCount.setText(String.valueOf(book.returnPageCount()));
+        currentPage.setText(String.valueOf(book.returnCurrentPage()));
+        readingY.setSelected(book.returnIsReading());
+        readingN.setSelected(!book.returnIsReading());
+        read.setSelected(book.returnRead());
+        readList.setSelected(book.returnReadList());
+        wishList.setSelected(book.returnWishList());
+        genre.setText(book.returnGenre());
+        rating.setText(String.valueOf(book.returnRating()));
+        sliderating.setBlockIncrement(book.returnRating());
+        comments.setText(book.returnComments());
     }
     public void updateBook(){
         book.setAuthor(author.getText());
