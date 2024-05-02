@@ -27,7 +27,10 @@ public class Shelf {
     }
 
     public ArrayList<Book> inorder() {
-        return traverse((node, op) -> node.inOrder(op));
+        if(treeMap != null) {
+            return traverse((node, op) -> node.inOrder(op));
+        }
+        return null;
     }
 
     public ArrayList<Book> traverse(BiConsumer<TreeNode<String, Book>, Consumer<Book>> traversal) {
