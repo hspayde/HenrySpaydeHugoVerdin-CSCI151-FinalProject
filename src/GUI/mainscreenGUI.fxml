@@ -57,10 +57,11 @@
                      <font>
                         <Font size="20.0" />
                      </font></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
                   <Button mnemonicParsing="false" onAction="#addBookController" text="Add Book">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
                      <font>
                         <Font name="Optima Regular" size="25.0" />
                      </font>
@@ -70,10 +71,24 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Update">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#update" text="Update">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Save Changes">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -83,6 +98,9 @@
                      </font>
                   </Button>
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

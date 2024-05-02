@@ -2,8 +2,6 @@ package Files;
 import java.io.FileWriter;
 import java.io.IOException;
 import Model.Book;
-import static Files.ReadToBook.books;
-import static Model.Book.bookToString;
 
 public class WriteToFile {
     public static void main(String[] args) {
@@ -16,7 +14,7 @@ public class WriteToFile {
         try {
             FileWriter myWriter = new FileWriter("Files/Books.txt");
             for (int i = 0; i < books.length; i++) {
-                String bookInfo = bookToString(books[i]);
+                String bookInfo = Book.bookToString(books[i]);
                 myWriter.write(bookInfo + "\n");
             }
             myWriter.close();

@@ -1,13 +1,12 @@
 package GUI;
 
+import Core.BookHolder;
 import Model.Book;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
-import static Model.Book.bookToString;
 
 public class CreateBookController {
 
@@ -42,6 +41,7 @@ public class CreateBookController {
     public void initialize() {}
     public void createBook(){
         Book newbook = new Book(this.author.getText(), this.bookTitle.getText(), this.pageCount.getText(), this.currentPage.getText(), this.readingY.isSelected(),this.owned.isSelected(),this.read.isSelected(), this.readList.isSelected(), this.wishList.isSelected(), this.genre.getText(), this.slideRating.getValue(), this.comments.getText());
-        System.out.println(bookToString(newbook));
+        BookHolder bookHolder = BookHolder.getInstance();
+        bookHolder.setBook(newbook);
     }
 }

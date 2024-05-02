@@ -197,7 +197,7 @@
                   <Insets bottom="10.0" />
                </padding>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Update">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#updateBook" text="Update">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>

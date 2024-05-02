@@ -180,18 +180,19 @@ public class Controller {
     }
 
     public void addBook (Book book) {
-        if(book.returnOwned() && !owned.contains(book)) {
+        if(book.returnOwned()) {
             owned.add(book);
         }
-        if(book.returnRead() && !read.contains(book)) {
+        if(book.returnRead()) {
             read.add(book);
         }
-        if(book.returnReadList() && !readList.contains(book)) {
+        if(book.returnReadList()) {
             readList.add(book);
         }
-        if(book.returnWishList() && !wishList.contains(book)) {
+        if(book.returnWishList()) {
             wishList.add(book);
         }
+        updateView();
     }
 
 }
