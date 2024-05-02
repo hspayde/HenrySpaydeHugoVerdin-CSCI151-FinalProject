@@ -40,8 +40,8 @@ public class BookInfoController {
     public void intialize() {
         bookTitle.setText(book.returnBookTitle());
         author.setText(book.returnAuthor());
-        pageCount.setText(String.valueOf(book.returnPageCount()));
-        currentPage.setText(String.valueOf(book.returnCurrentPage()));
+        pageCount.setText(book.returnPageCount());
+        currentPage.setText(book.returnCurrentPage());
         readingY.setSelected(book.returnIsReading());
         readingN.setSelected(!book.returnIsReading());
         read.setSelected(book.returnRead());
@@ -55,8 +55,8 @@ public class BookInfoController {
     public void updateBook(){
         book.setAuthor(author.getText());
         book.setBookTitle(bookTitle.getText());
-        book.setPageCount(Integer.parseInt(pageCount.getText()));
-        book.setCurrentPage(Integer.parseInt(currentPage.getText()));
+        book.setPageCount(pageCount.getText());
+        book.setCurrentPage(currentPage.getText());
         book.setIsReading(readingY.isSelected());
         book.setOwned(owned.isSelected());
         book.setRead(read.isSelected());

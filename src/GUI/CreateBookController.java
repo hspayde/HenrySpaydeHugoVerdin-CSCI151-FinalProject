@@ -43,7 +43,7 @@ public class CreateBookController {
 
     public void initialize() {}
     public void createBook(){
-        Book newbook = new Book(this.author.getText(), this.bookTitle.getText(), Integer.parseInt(this.pageCount.getText()), Integer.parseInt(this.currentPage.getText()), this.readingY.isSelected(),this.owned.isSelected(),this.read.isSelected(), this.readList.isSelected(), this.wishList.isSelected(), this.genre.getText(), Integer.parseInt(this.rating.getText()), this.comments.getText());
+        Book newbook = new Book(this.author.getText(), this.bookTitle.getText(), this.pageCount.getText(), this.currentPage.getText(), this.readingY.isSelected(),this.owned.isSelected(),this.read.isSelected(), this.readList.isSelected(), this.wishList.isSelected(), this.genre.getText(), Integer.parseInt(this.rating.getText()), this.comments.getText());
         System.out.println(bookToString(newbook));
     }
     public void setRating(){

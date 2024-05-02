@@ -29,9 +29,9 @@ public class Controller {
     @FXML
     private Pane pane3;
 
-    Book test = new Book("Author", "Title", 55, 25, true, true, true, true, true, "genre", 4, "comments");
-    Book test1 = new Book("Autho", "Tite", 5, 2, true, true, true, true, true, "genre", 4, "comments");
-    Book test2 = new Book("Auor", "tle", 85, 5, true, true, true, true, true, "genre", 4, "comments");
+    Book test = new Book("Author", "Title", "55", "25", true, true, true, true, true, "genre", 4, "comments");
+    Book test1 = new Book("Autho", "Tite", "5", "2", true, true, true, true, true, "genre", 4, "comments");
+    Book test2 = new Book("Auor", "tle", "85", "5", true, true, true, true, true, "genre", 4, "comments");
 
 
 
