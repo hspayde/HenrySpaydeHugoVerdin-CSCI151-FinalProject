@@ -42,6 +42,7 @@ public class BookInfoController {
         currentPage.setText(book.returnCurrentPage());
         readingY.setSelected(book.returnIsReading());
         readingN.setSelected(!book.returnIsReading());
+        owned.setSelected(book.returnOwned());
         read.setSelected(book.returnRead());
         readList.setSelected(book.returnReadList());
         wishList.setSelected(book.returnWishList());

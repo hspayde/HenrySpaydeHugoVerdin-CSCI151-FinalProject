@@ -46,10 +46,11 @@ public class Controller {
 
     public void initialize() {
         currentShelfText.setText("Owned");
-        owned.add(test);
-        read.add(test1);
-        wishList.add(test2);
+        //owned.add(test);
+        //read.add(test1);
+        //wishList.add(test2);
         try {
+            start();
             updateView();
         }catch (Exception ignored) {}
     }
@@ -224,6 +225,13 @@ public class Controller {
             }
         }
         Files.WriteToFile.writeFile(finalList);
+    }
+
+    public void start() {
+        ArrayList<Book> books = Files.ReadToBook.readList();
+        for(int i = 0; i < books.size(); i++) {
+            addBook(books.get(i));
+        }
     }
 
 }
