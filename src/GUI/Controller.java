@@ -1,6 +1,7 @@
 package GUI;
 
 import Core.BookHolder;
+import Files.WriteToFile;
 import Model.Book;
 import Model.Shelf;
 import javafx.fxml.FXML;
@@ -193,6 +194,36 @@ public class Controller {
             wishList.add(book);
         }
         updateView();
+    }
+
+    public void save() {
+        ArrayList<Book> finalList = new ArrayList<Book>();
+        ArrayList<Book> temp;
+        temp = owned.inorder();
+        if(temp != null) {
+            for(int i = 0; i < temp.size(); i++) {
+                finalList.add(temp.get(i));
+            }
+        }
+        temp = read.inorder();
+        if(temp != null) {
+            for(int i = 0; i < temp.size(); i++) {
+                finalList.add(temp.get(i));
+            }
+        }
+        temp = readList.inorder();
+        if(temp != null) {
+            for(int i = 0; i < temp.size(); i++) {
+                finalList.add(temp.get(i));
+            }
+        }
+        temp = wishList.inorder();
+        if(temp != null) {
+            for(int i = 0; i < temp.size(); i++) {
+                finalList.add(temp.get(i));
+            }
+        }
+        Files.WriteToFile.writeFile(finalList);
     }
 
 }

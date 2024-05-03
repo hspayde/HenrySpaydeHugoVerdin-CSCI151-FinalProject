@@ -1,20 +1,16 @@
 package Files;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import Model.Book;
 
-public class WriteToFile {
-    public static void main(String[] args) {
-        /*This array needs to be built from the books in the tree map*/
-        Book [] books = new Book [4];
-        books[0] = new Book ("hugo","verdin","10","5",true,false,true,false,false,"fiction",2.25,"good");
-        books[1] = new Book ("hugo","verdin","10","5",true,false,true,false,false,"fiction",2.25,"good");
-        books[2] = new Book ("hugo","verdin","10","5",true,false,true,false,false,"fiction",2.25,"good");
-        books[3] = new Book ("hugo","verdin","10","5",true,false,true,false,false,"fiction",2.25,"good");
+public final class WriteToFile {
+    public static void writeFile(ArrayList<Book> books) {
         try {
             FileWriter myWriter = new FileWriter("Files/Books.txt");
-            for (int i = 0; i < books.length; i++) {
-                String bookInfo = Book.bookToString(books[i]);
+            for (int i = 0; i < books.size(); i++) {
+                String bookInfo = Book.bookToString(books.get(i));
                 myWriter.write(bookInfo + "\n");
             }
             myWriter.close();
