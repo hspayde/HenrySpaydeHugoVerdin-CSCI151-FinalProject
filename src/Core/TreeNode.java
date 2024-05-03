@@ -211,9 +211,16 @@ public class TreeNode<K extends Comparable<K>, V> {
                 TreeNode<K, V> temp = right.get();
                 temp.parent = this.parent;
                 temp.direction = this.direction;
-                right = right.get().left;
-                right.get().parent = Optional.of(temp);
-                right.get().direction = Direction.RIGHT;
+                right = temp.left;
+                if(temp.left.isPresent()) {
+                    temp.left.get().parent = Optional.of(temp);
+                    right.get().direction = Direction.RIGHT;
+                }
+                if(this.direction == Direction.RIGHT) {
+                    this.parent.get().right = Optional.of(temp);
+                }else if(this.direction == Direction.LEFT) {
+                    this.parent.get().right = Optional.of(temp);
+                }
                 temp.left = Optional.of(this);
                 temp.left.get().parent = Optional.of(temp);
                 this.direction = Direction.LEFT;
@@ -231,6 +238,7 @@ public class TreeNode<K extends Comparable<K>, V> {
         return Optional.of(this);
     }
 
+
     public Optional<TreeNode<K, V>> rightRotateAt(K value) {
         if(value.compareTo(this.key) < 0) {
             if(left.isPresent()) {left = left.get().rightRotateAt(value);}
@@ -243,9 +251,16 @@ public class TreeNode<K extends Comparable<K>, V> {
                 TreeNode<K, V> temp = left.get();
                 temp.parent = this.parent;
                 temp.direction = this.direction;
-                left = left.get().right;
-                left.get().parent = Optional.of(temp);
-                left.get().direction = Direction.LEFT;
+                left = temp.right;
+                if(left.isPresent()) {
+                    left.get().parent = Optional.of(temp);
+                    left.get().direction = Direction.LEFT;
+                }
+                if(this.direction == Direction.RIGHT) {
+                    this.parent.get().right = Optional.of(temp);
+                }else if(this.direction == Direction.LEFT) {
+                    this.parent.get().right = Optional.of(temp);
+                }
                 temp.right = Optional.of(this);
                 temp.right.get().parent = Optional.of(temp);
                 this.direction = Direction.RIGHT;

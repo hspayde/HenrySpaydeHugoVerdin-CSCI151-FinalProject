@@ -23,7 +23,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="bookTitle">
+                  <TextField fx:id="bookTitle" text="N/A">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -40,7 +40,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="author">
+                  <TextField fx:id="author" text="N/A">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -56,7 +56,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="pageCount">
+                  <TextField fx:id="pageCount" text="N/A">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -75,7 +75,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="currentPage">
+                  <TextField fx:id="currentPage" text="N/A">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -90,7 +90,7 @@
                      <font>
                         <Font name="Optima Regular" size="15.0" />
                      </font></Label>
-                  <CheckBox fx:id="readingY" mnemonicParsing="false" text="Yes">
+                  <CheckBox fx:id="readingY" mnemonicParsing="false" selected="true" text="Yes">
                      <font>
                         <Font name="Optima Regular" size="13.0" />
                      </font>
@@ -163,7 +163,7 @@
                      <font>
                         <Font name="Optima Regular" size="15.0" />
                      </font></Label>
-                  <TextField fx:id="genre">
+                  <TextField fx:id="genre" text="N/A">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -201,7 +201,7 @@
                         <Font name="Optima Regular" size="15.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="comments" prefHeight="200.0" prefWidth="200.0">
+                  <TextArea fx:id="comments" prefHeight="200.0" prefWidth="200.0" text="N/A">
                      <font>
                         <Font name="Optima Regular" size="13.0" />
                      </font>
